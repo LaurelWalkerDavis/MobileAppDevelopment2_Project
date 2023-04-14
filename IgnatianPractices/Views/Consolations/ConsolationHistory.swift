@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ConsolationHistory: View {
     @ObservedObject var consol = ConsolationViewModel()
-    @State var details = ConsolationModel(dateNum: "", consolationData: "")
+    @State var details = ConsolationModel(dateNum: "", consolationData: "", date: Date())
     
     var body: some View {
         NavigationView {
@@ -21,7 +21,7 @@ struct ConsolationHistory: View {
                         Text(cns.dateNum)
                     }
                 }
-            }.navigationBarTitle("Past Consolations")
+            }.navigationBarTitle("Consolations")
         }.padding()
         
             .onAppear {

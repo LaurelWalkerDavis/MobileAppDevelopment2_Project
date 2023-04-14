@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LifeReviewView: View {
     @ObservedObject var consol = ConsolationViewModel()
-    @State var details = ConsolationModel(dateNum: "", consolationData: "") // for creating a new consolation
+    @State var details = ConsolationModel(dateNum: "", consolationData: "", date: Date()) // for creating a new consolation
     
     @State var email = ""
     // @State
@@ -56,10 +56,10 @@ struct LifeReviewView: View {
             }
         }
         .onAppear {
-            consol.fetchData()
+            consol.fetchData(date: nil)
         }
         .refreshable { // makes list refresh when you pull it down
-            consol.fetchData()
+            consol.fetchData(date: nil)
         }
         
     }

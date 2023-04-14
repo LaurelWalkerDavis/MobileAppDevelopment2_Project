@@ -10,29 +10,32 @@ import SwiftUI
 struct ConsolationView: View {
     
     @ObservedObject var consol = ConsolationViewModel()
-    @State var details = ConsolationModel(dateNum: "", consolationData: "") // for creating a new consolation
-    
+    @State var details = ConsolationModel(dateNum: "", consolationData: "", date: Date()) // for creating a new consolation
     @State var email = ""
+    @State var today : Date = Date()
     // @State
     // @ObservedObject - used to observe changes to an existing instance of an object. owned an managed by an external entity. data is not stored within the view.
     // @StateObject - data is stored within the view.
+    
+
     
     var body: some View {
         NavigationView {
             List {
                 Text("Daily Consolations")
                     .font(.largeTitle)
-                //.padding(.leading)
                 Section {
                     Text("A spiritual consolation “is a profound experience of interior joy, consisting in seeing God’s presence in everything. It strengthens faith and hope and also the ability to do good,” - Pope Francis")
                     Text("Review your day and note 2 or 3 consolations you experienced.")
+                }header: {
+                    Text("Exercise Instructions")
                 }
                 
                 Section {
                     NavigationLink {
                         ConsolationDetail(consolation: $details)
                     } label: {
-                        Text("New consolation")
+                        Text("Add New Consolation")
                             .foregroundColor(Color.green)
                             .font(.system(size: 15))
                     }
@@ -45,14 +48,16 @@ struct ConsolationView: View {
                             Text(cns.dateNum)
                         }
                     }
+                } header: {
+                    Text("Today's Consolations")
                 }
-            }.padding()            
+            }.padding()
             
                 .onAppear {
-                    consol.fetchData()
+                    consol.fetchData(date: today)
                 }
                 .refreshable { // makes list refresh when you pull it down
-                    consol.fetchData()
+                    consol.fetchData(date: today)
                 }
             
         }

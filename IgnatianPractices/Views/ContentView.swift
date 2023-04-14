@@ -22,21 +22,25 @@ struct ContentView: View {
                             VerseView(passage: "PSALM")
                         } label: {
                             Text("Lectio Divina")
+                                .font(.system(size: 25))
                         }
                         NavigationLink {
                             VerseView(passage: "GOSPEL")
                         } label: {
                             Text("Imaging Prayer")
+                                .font(.system(size: 25))
                         }
                         NavigationLink {
                             ConsolationView()
                         } label: {
                             Text("Examen")
+                                .font(.system(size: 25))
                         }
                     } header: {
-                        Text("Daily exercises")
+                        Text("Daily exercises").font(.headline)
                     }
-                }.background(Color.black)
+                }
+                .background(Color.black)
                 .navigationBarTitle("Pocket Monk")
             }
             .listStyle(.insetGrouped)
@@ -44,7 +48,8 @@ struct ContentView: View {
             .alert(isPresented: $verseVM.hasError, error: verseVM.error) {
                 Text("")
             } // .alert addresses error handling
-        }.ignoresSafeArea()
+        }.environment(\.defaultMinListRowHeight, 80)
+        .ignoresSafeArea()
     }
 }
 

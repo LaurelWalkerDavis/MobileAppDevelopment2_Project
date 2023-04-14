@@ -29,8 +29,4 @@ struct VerseView: View {
     }
 }
 
-//struct VerseView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        VerseView()
-//    }
-//}
+

@@ -16,7 +16,7 @@ struct ConsolationDetail: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TextField(consol.date, text: $consolation.dateNum)
+            TextField(consol.getDateString(), text: $consolation.dateNum)
                 .font(.system(size: 25))
                 .fontWeight(.bold)
             TextEditor(text: $consolation.consolationData) // TextEditor is better for multi-line fields
@@ -41,6 +41,6 @@ struct ConsolationDetail: View {
 struct ConsolationDetail_Previews: PreviewProvider {
     @Binding var consolation : ConsolationModel // binding allows users to interact with the variable. need to add $.
     static var previews: some View {
-        ConsolationDetail(consolation: .constant(ConsolationModel(dateNum: "Today's Date", consolationData: "This is how I felt consoled.")))
+        ConsolationDetail(consolation: .constant(ConsolationModel(dateNum: "Today's Date", consolationData: "This is how I felt consoled.", date: Date())))
     }
 }

@@ -14,7 +14,7 @@ class ConsolationViewModel : ObservableObject {
     @Published var consolations = [ConsolationModel]()
     @Published var docCount: Int = 1
     @Published var dateNum : String = ""
-    @Published var date : String = ""
+    @Published var date = Date()
     let db = Firestore.firestore()
     
     
@@ -25,10 +25,34 @@ class ConsolationViewModel : ObservableObject {
     }
     
     
-    func fetchData() {
+    func fetchData(date: Date? = nil) {
         self.consolations.removeAll()
-        db.collection("consolations")
-            .getDocuments() { (querySnapshot, err) in
+        //var query = db.collection("consolations")
+        let query = Firestore.firestore().collection("consolations")
+        if let date = date {
+            let calendar = Calendar.current
+            let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+            let startDate = calendar.date(from: dateComponents)!
+            let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
+            
+            query
+                .whereField("date", isGreaterThanOrEqualTo: startDate)
+                .whereField("date", isLessThan: endDate).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting consolations: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        do {
+                            self.consolations.append(try document.data(as: ConsolationModel.self))
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }            
+        }
+        else {
+             query.getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting consolations: \(err)")
                 } else {
@@ -41,6 +65,7 @@ class ConsolationViewModel : ObservableObject {
                     }
                 }
             }
+        }
     }
     
     
@@ -53,7 +78,8 @@ class ConsolationViewModel : ObservableObject {
                 
                 docRef.updateData([
                     "consolationData" : consolations.consolationData,
-                    "dateNum": dateNum
+                    "date" : consolations.date,
+                    "dateNum" : dateNum
                 ]) { err in
                     if let err = err {
                         print("Error updating consolation: \(err)")
@@ -67,28 +93,32 @@ class ConsolationViewModel : ObservableObject {
             updateDocCount()
             setDateNum()
             if !consolations.dateNum.isEmpty || !consolations.consolationData.isEmpty {
-                    var ref: DocumentReference? = nil
-                    ref = db.collection("consolations").addDocument(data: [
-                        "consolationData": consolations.consolationData,
-                        "dateNum": dateNum
-                    ]) { err in
-                        if let err = err {
-                            print("Error adding consolation: \(err)")
-                        } else {
-                            print("Consolation added with ID: \(ref!.documentID)")
-                        }
+                var ref: DocumentReference? = nil
+                ref = db.collection("consolations").addDocument(data: [
+                    "consolationData": consolations.consolationData,
+                    "date" : consolations.date,
+                    "dateNum": dateNum
+                ]) { err in
+                    if let err = err {
+                        print("Error adding consolation: \(err)")
+                    } else {
+                        print("Consolation added with ID: \(ref!.documentID)")
                     }
                 }
             }
         }
-        
-        
-        func setCurrentDate() {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .full
-            dateFormatter.timeStyle = .none
-            self.date = dateFormatter.string(from: Date())
-        }
+    }
+    
+    func getDateString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        let dt = dateFormatter.string(from: Date())
+        return dt
+    }
+    
+    func setCurrentDate() {
+        self.date = Date()
+    }
     
     func updateDocCount() {
         db.collection("consolations").addSnapshotListener { snapshot, error in
@@ -101,9 +131,12 @@ class ConsolationViewModel : ObservableObject {
             self.docCount = snapshot.documents.count
         }
     }
-        
-        func setDateNum() {
-            dateNum = String(docCount) + " - " + date
-        }
+    
+    func setDateNum() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        let dt = dateFormatter.string(from: Date())
+        dateNum = String(docCount) + " - " + "\(dt)"
     }
+}
 
