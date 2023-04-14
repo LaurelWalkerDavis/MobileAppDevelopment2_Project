@@ -8,36 +8,39 @@
 import SwiftUI
 
 struct ConsolationDetail: View {
-        
-        @Binding var consolation : ConsolationModel // binding allows users to interact with the variable. need to add $.
-        @ObservedObject var consol = ConsolationViewModel()
-        
-        var body: some View {
-            VStack(alignment: .leading) {
-                TextField("Consolation Title", text: $consolation.title)
-                    .font(.system(size: 25))
-                    .fontWeight(.bold)
-                TextEditor(text: $consolation.consolationData) // TextEditor is better for multi-line fields
-                    .font(.system(size: 20))
-            }
-            .padding()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        consol.saveData(consolations: consolation)
-                        consolation.title = ""  //clear previous content display
-                        consolation.consolationData = "" //clear previous content display
-                    } label: {
-                        Text("Save")
-                    }
-
+    
+    @Binding var consolation : ConsolationModel // binding allows users to interact with the variable. need to add $.
+    //@Binding var dateNum : String
+    @ObservedObject var consol = ConsolationViewModel()
+    
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            TextField(consol.dateNum, text: $consolation.dateNum)
+                .font(.system(size: 25))
+                .fontWeight(.bold)
+            TextEditor(text: $consolation.consolationData) // TextEditor is better for multi-line fields
+                .font(.system(size: 20))
+        }
+        .padding()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    consol.saveData(consolations: consolation)
+                    consolation.dateNum = ""  //clear previous content display
+                    consolation.consolationData = "" //clear previous content display
+                } label: {
+                    Text("Save")
                 }
+                
             }
         }
     }
+}
 
 struct ConsolationDetail_Previews: PreviewProvider {
+    @Binding var consolation : ConsolationModel // binding allows users to interact with the variable. need to add $.
     static var previews: some View {
-        ConsolationDetail(consolation: .constant(ConsolationModel(title: "Consolation 1", consolationData: "This is how I felt consoled.")))
+        ConsolationDetail(consolation: .constant(ConsolationModel(dateNum: "Today's Date", consolationData: "This is how I felt consoled.")))
     }
 }

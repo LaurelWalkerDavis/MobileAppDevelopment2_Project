@@ -10,7 +10,7 @@ import SwiftUI
 struct ConsolationView: View {
     
     @ObservedObject var consol = ConsolationViewModel()
-    @State var details = ConsolationModel(title: "", consolationData: "") // for creating a new consolation
+    @State var details = ConsolationModel(dateNum: "", consolationData: "") // for creating a new consolation
     
     @State var email = ""
     // @State
@@ -20,13 +20,6 @@ struct ConsolationView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach($consol.consolations) { $cns in
-                    NavigationLink {
-                        ConsolationDetail(consolation: $cns)
-                    } label: {
-                        Text(cns.title)
-                    }
-                }
                 Section {
                     NavigationLink {
                         ConsolationDetail(consolation: $details)
@@ -36,6 +29,15 @@ struct ConsolationView: View {
                             .font(.system(size: 15))
                     }
                 }
+                Section {
+                    ForEach($consol.consolations) { $cns in
+                        NavigationLink {
+                            ConsolationDetail(consolation: $cns)
+                        } label: {
+                            Text(cns.dateNum)
+                        }
+                    }
+                }                
             }
             
         }

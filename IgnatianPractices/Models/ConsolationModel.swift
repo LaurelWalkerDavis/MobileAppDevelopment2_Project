@@ -10,6 +10,6 @@ import FirebaseFirestoreSwift //import this and add @DocumentID to allow Firebas
 
 struct ConsolationModel : Codable, Identifiable {
     @DocumentID var id: String?
-    var title: String
+    var dateNum: String
     var consolationData: String
 }

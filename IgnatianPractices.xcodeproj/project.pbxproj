@@ -25,6 +25,7 @@
 		F5ED6FCE29E8E890007439AF /* ConsolationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCD29E8E890007439AF /* ConsolationView.swift */; };
 		F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */; };
 		F5ED6FD229E8ED7A007439AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */; };
+		F5ED6FD429E99A12007439AF /* DayInReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FD329E99A12007439AF /* DayInReviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F5ED6FCD29E8E890007439AF /* ConsolationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationView.swift; sourceTree = "<group>"; };
 		F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationDetail.swift; sourceTree = "<group>"; };
 		F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5ED6FD329E99A12007439AF /* DayInReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInReviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				F518040029E1BDCA00316379 /* VerseView.swift */,
 				F5ED6FCD29E8E890007439AF /* ConsolationView.swift */,
 				F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */,
+				F5ED6FD329E99A12007439AF /* DayInReviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				F518698B29DA5A200074E5E7 /* BibleModel.swift in Sources */,
 				F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */,
 				F518697B29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift in Sources */,
+				F5ED6FD429E99A12007439AF /* DayInReviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

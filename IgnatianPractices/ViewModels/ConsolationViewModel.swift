@@ -12,14 +12,31 @@ import FirebaseFirestore
 class ConsolationViewModel : ObservableObject {
     
     @Published var consolations = [ConsolationModel]()
+    @Published var docCount: Int = 0
+    @Published var dateNum : String = ""
     let db = Firestore.firestore()
-     
+    
+    
+    init() {
+        setDateNum()
+        db.collection("consolations").addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot
+            else {
+                print("Error fetching consolations: \(error!)")
+                return
+            }
+            // Update the document count based on the number of documents in the collection
+            self.docCount = snapshot.documents.count
+        }
+    }
+    
+    
     func fetchData() {
         self.consolations.removeAll()
         db.collection("consolations")
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
-                    print("Error getting documents: \(err)")
+                    print("Error getting consolations: \(err)")
                 } else {
                     for document in querySnapshot!.documents {
                         do {
@@ -30,42 +47,67 @@ class ConsolationViewModel : ObservableObject {
                     }
                 }
             }
+        //        db.collection("consolations").addSnapshotListener { snapshot, error in
+        //            guard let snapshot = snapshot
+        //            else {
+        //                print("Error fetching consolations: \(error!)")
+        //                return
+        //            }
+        //            // Update the document count based on the number of documents in the collection
+        //            self.docCount = snapshot.documents.count
     }
+    
     
     func saveData(consolations: ConsolationModel) {  // see https://firebase.google.com/docs/firestore/query-data/get-data#swift for help
         
         if let id = consolations.id {
-            // Edit consolations
-            if !consolations.title.isEmpty || !consolations.consolationData.isEmpty {
+            // This is to edit consolations that already exist. It connects with what's in Firebase and updates it.
+            if !consolations.dateNum.isEmpty || !consolations.consolationData.isEmpty {
                 let docRef = db.collection("consolations").document(id)
                 
                 docRef.updateData([
-                    "title": consolations.title,
-                    "consolationData" : consolations.consolationData
+                    "consolationData" : consolations.consolationData,
+                    "dateNum": getDateNum()
                 ]) { err in
                     if let err = err {
-                        print("Error updating document: \(err)")
+                        print("Error updating consolation: \(err)")
                     } else {
-                        print("Document successfully updated")
+                        print("Successfully updated consolation")
                     }
                 }
             }
         } else {
-            // Add note - this is a new note and does not already have an id
-            if !consolations.title.isEmpty || !consolations.consolationData.isEmpty {
-                var ref: DocumentReference? = nil
-                ref = db.collection("consolations").addDocument(data: [
-                    "title": consolations.title,
-                    "consolationData": consolations.consolationData
-                ]) { err in
-                    if let err = err {
-                        print("Error adding document: \(err)")
-                    } else {
-                        print("Document added with ID: \(ref!.documentID)")
+            // Add consolation - this is a new consolation and does not already have an id in Firebase
+            if !consolations.dateNum.isEmpty || !consolations.consolationData.isEmpty {
+                    var ref: DocumentReference? = nil
+                    ref = db.collection("consolations").addDocument(data: [
+                        "consolationData": consolations.consolationData,
+                        "dateNum": consolations.dateNum
+                    ]) { err in
+                        if let err = err {
+                            print("Error adding consolation: \(err)")
+                        } else {
+                            print("Consolation added with ID: \(ref!.documentID)")
+                        }
                     }
                 }
             }
         }
         
+        
+        func getCurrentDate() -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .full
+            dateFormatter.timeStyle = .none
+            return dateFormatter.string(from: Date())
+        }
+        
+        func setDateNum() {
+            dateNum = String(docCount) + " - " + getCurrentDate()
+        }
+        
+        func getDateNum() -> String {
+            return dateNum
+        }
     }
-}
+

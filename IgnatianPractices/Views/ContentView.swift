@@ -13,29 +13,33 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.black
+            Color("Background").edgesIgnoringSafeArea(.all)
             NavigationView {
                 List {
                     //BookView()
-                    NavigationLink {
-                        VerseView(passage: "PSALM")
-                    } label: {
-                        Text("Lectio Divina")
-                    }
-                    NavigationLink {
-                        VerseView(passage: "GOSPEL")
-                    } label: {
-                        Text("Imaging Prayer")
-                    }
-                    NavigationLink {
-                        ConsolationView()
-                    } label: {
-                        Text("Examen")
+                    Section {
+                        NavigationLink {
+                            VerseView(passage: "PSALM")
+                        } label: {
+                            Text("Lectio Divina")
+                        }
+                        NavigationLink {
+                            VerseView(passage: "GOSPEL")
+                        } label: {
+                            Text("Imaging Prayer")
+                        }
+                        NavigationLink {
+                            ConsolationView()
+                        } label: {
+                            Text("Examen")
+                        }
+                    } header: {
+                        Text("Daily exercises")
                     }
                 }.background(Color.black)
-                .navigationBarTitle("Ignatian Spirituality")
+                .navigationBarTitle("Pocket Monk")
             }
-            .listStyle(.grouped)
+            .listStyle(.insetGrouped)
             .padding()
             .alert(isPresented: $verseVM.hasError, error: verseVM.error) {
                 Text("")
@@ -48,6 +52,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView().environment(\.colorScheme, .dark)
+        }
     }
 }
