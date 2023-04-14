@@ -18,48 +18,33 @@ struct LifeReviewView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                //BookView()
+            List {  
                 Section {
                     NavigationLink {
                         VerseView(passage: "PSALM")
                     } label: {
                         Text("Lectio Divina")
+                            .font(.system(size: 25))
                     }
                     NavigationLink {
                         VerseView(passage: "GOSPEL")
                     } label: {
                         Text("Imaging Prayer")
+                            .font(.system(size: 25))
                     }
                     NavigationLink {
                         ConsolationHistory()
                     } label: {
-                        Text("Examen")
+                        Text("Consolations")
+                            .font(.system(size: 25))
                     }
                 } header: {
                     Text("Daily Insights")
+                        .font(.headline)
                 }
             }.background(Color.black)
                 .navigationBarTitle("Life Review")
-        }
-        .listStyle(.insetGrouped)
-        .padding()
-        List {
-            Section(header: Text("Consolations")) {
-                ForEach($consol.consolations) { $cns in
-                    NavigationLink {
-                        ConsolationDetail(consolation: $cns)
-                    } label: {
-                        Text(cns.dateNum)
-                    }
-                }
-            }
-        }
-        .onAppear {
-            consol.fetchData(date: nil)
-        }
-        .refreshable { // makes list refresh when you pull it down
-            consol.fetchData(date: nil)
+                .environment(\.defaultMinListRowHeight, 80)
         }
         
     }

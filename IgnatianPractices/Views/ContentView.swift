@@ -36,6 +36,12 @@ struct ContentView: View {
                             Text("Examen")
                                 .font(.system(size: 25))
                         }
+                        NavigationLink {
+                            LifeReviewView()
+                        } label: {
+                            Text("Life Review")
+                                .font(.system(size: 25))
+                        }
                     } header: {
                         Text("Daily exercises").font(.headline)
                     }
@@ -43,8 +49,7 @@ struct ContentView: View {
                 .background(Color.black)
                 .navigationBarTitle("Pocket Monk")
             }
-            .listStyle(.insetGrouped)
-            .padding()
+            .listStyle(.grouped)
             .alert(isPresented: $verseVM.hasError, error: verseVM.error) {
                 Text("")
             } // .alert addresses error handling

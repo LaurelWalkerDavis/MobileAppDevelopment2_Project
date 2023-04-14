@@ -22,7 +22,8 @@ struct ConsolationHistory: View {
                     }
                 }
             }.navigationBarTitle("Consolations")
-        }.padding()
+
+        }
         
             .onAppear {
                 consol.fetchData()
