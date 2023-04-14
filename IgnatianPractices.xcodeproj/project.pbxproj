@@ -25,7 +25,8 @@
 		F5ED6FCE29E8E890007439AF /* ConsolationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCD29E8E890007439AF /* ConsolationView.swift */; };
 		F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */; };
 		F5ED6FD229E8ED7A007439AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */; };
-		F5ED6FD429E99A12007439AF /* DayInReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FD329E99A12007439AF /* DayInReviewView.swift */; };
+		F5ED6FD429E99A12007439AF /* LifeReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FD329E99A12007439AF /* LifeReviewView.swift */; };
+		F5ED6FD729E9D049007439AF /* ConsolationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FD629E9D049007439AF /* ConsolationHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +46,8 @@
 		F5ED6FCD29E8E890007439AF /* ConsolationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationView.swift; sourceTree = "<group>"; };
 		F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationDetail.swift; sourceTree = "<group>"; };
 		F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F5ED6FD329E99A12007439AF /* DayInReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInReviewView.swift; sourceTree = "<group>"; };
+		F5ED6FD329E99A12007439AF /* LifeReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReviewView.swift; sourceTree = "<group>"; };
+		F5ED6FD629E9D049007439AF /* ConsolationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +109,8 @@
 				F51803FC29E0FA9500316379 /* BookView.swift */,
 				F51803FE29E1B5F900316379 /* ChapterView.swift */,
 				F518040029E1BDCA00316379 /* VerseView.swift */,
+				F5ED6FD329E99A12007439AF /* LifeReviewView.swift */,
 				F5ED6FD529E9C4A0007439AF /* Consolations */,
-				F5ED6FD329E99A12007439AF /* DayInReviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +139,7 @@
 			children = (
 				F5ED6FCD29E8E890007439AF /* ConsolationView.swift */,
 				F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */,
+				F5ED6FD629E9D049007439AF /* ConsolationHistory.swift */,
 			);
 			path = Consolations;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5ED6FD729E9D049007439AF /* ConsolationHistory.swift in Sources */,
 				F518697D29DA3AAE0074E5E7 /* ContentView.swift in Sources */,
 				F518040329E3608500316379 /* VerseViewModel.swift in Sources */,
 				F518698929DA50850074E5E7 /* BibleViewModel.swift in Sources */,
@@ -232,7 +236,7 @@
 				F518698B29DA5A200074E5E7 /* BibleModel.swift in Sources */,
 				F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */,
 				F518697B29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift in Sources */,
-				F5ED6FD429E99A12007439AF /* DayInReviewView.swift in Sources */,
+				F5ED6FD429E99A12007439AF /* LifeReviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

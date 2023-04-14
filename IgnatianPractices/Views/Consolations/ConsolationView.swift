@@ -46,8 +46,7 @@ struct ConsolationView: View {
                         }
                     }
                 }
-            }.padding()
-            
+            }.padding()            
             
                 .onAppear {
                     consol.fetchData()

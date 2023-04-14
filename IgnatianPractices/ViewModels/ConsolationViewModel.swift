@@ -22,15 +22,6 @@ class ConsolationViewModel : ObservableObject {
         updateDocCount()
         setCurrentDate()
         setDateNum()
-//        db.collection("consolations").addSnapshotListener { snapshot, error in
-//            guard let snapshot = snapshot
-//            else {
-//                print("Error fetching consolations: \(error!)")
-//                return
-//            }
-//            // Update the document count based on the number of documents in the collection
-//            self.docCount = snapshot.documents.count
-//        }
     }
     
     
@@ -50,14 +41,6 @@ class ConsolationViewModel : ObservableObject {
                     }
                 }
             }
-        //        db.collection("consolations").addSnapshotListener { snapshot, error in
-        //            guard let snapshot = snapshot
-        //            else {
-        //                print("Error fetching consolations: \(error!)")
-        //                return
-        //            }
-        //            // Update the document count based on the number of documents in the collection
-        //            self.docCount = snapshot.documents.count
     }
     
     
@@ -118,10 +101,6 @@ class ConsolationViewModel : ObservableObject {
             self.docCount = snapshot.documents.count
         }
     }
-        
-//        func setDateNum() {
-//            dateNum = String(docCount) + " - " + getCurrentDate()
-//        }
         
         func setDateNum() {
             dateNum = String(docCount) + " - " + date
