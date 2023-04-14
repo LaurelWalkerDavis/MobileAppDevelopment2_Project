@@ -18,14 +18,22 @@ struct ConsolationView: View {
     // @StateObject - data is stored within the view.
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
+                Text("Daily Consolations")
+                    .font(.largeTitle)
+                //.padding(.leading)
+                Section {
+                    Text("A spiritual consolation “is a profound experience of interior joy, consisting in seeing God’s presence in everything. It strengthens faith and hope and also the ability to do good,” - Pope Francis")
+                    Text("Review your day and note 2 or 3 consolations you experienced.")
+                }
+                
                 Section {
                     NavigationLink {
                         ConsolationDetail(consolation: $details)
                     } label: {
                         Text("New consolation")
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(Color.green)
                             .font(.system(size: 15))
                     }
                 }
@@ -37,22 +45,23 @@ struct ConsolationView: View {
                             Text(cns.dateNum)
                         }
                     }
-                }                
-            }
+                }
+            }.padding()
+            
+            
+                .onAppear {
+                    consol.fetchData()
+                }
+                .refreshable { // makes list refresh when you pull it down
+                    consol.fetchData()
+                }
             
         }
-        .onAppear {
-            consol.fetchData()
-        }
-        .refreshable { // makes list refresh when you pull it down
-            consol.fetchData()
-        }
-        
     }
-}
-
-struct ConsolationView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConsolationView()
+    
+    struct ConsolationView_Previews: PreviewProvider {
+        static var previews: some View {
+            ConsolationView()
+        }
     }
 }

@@ -12,22 +12,25 @@ import FirebaseFirestore
 class ConsolationViewModel : ObservableObject {
     
     @Published var consolations = [ConsolationModel]()
-    @Published var docCount: Int = 0
+    @Published var docCount: Int = 1
     @Published var dateNum : String = ""
+    @Published var date : String = ""
     let db = Firestore.firestore()
     
     
     init() {
+        updateDocCount()
+        setCurrentDate()
         setDateNum()
-        db.collection("consolations").addSnapshotListener { snapshot, error in
-            guard let snapshot = snapshot
-            else {
-                print("Error fetching consolations: \(error!)")
-                return
-            }
-            // Update the document count based on the number of documents in the collection
-            self.docCount = snapshot.documents.count
-        }
+//        db.collection("consolations").addSnapshotListener { snapshot, error in
+//            guard let snapshot = snapshot
+//            else {
+//                print("Error fetching consolations: \(error!)")
+//                return
+//            }
+//            // Update the document count based on the number of documents in the collection
+//            self.docCount = snapshot.documents.count
+//        }
     }
     
     
@@ -67,7 +70,7 @@ class ConsolationViewModel : ObservableObject {
                 
                 docRef.updateData([
                     "consolationData" : consolations.consolationData,
-                    "dateNum": getDateNum()
+                    "dateNum": dateNum
                 ]) { err in
                     if let err = err {
                         print("Error updating consolation: \(err)")
@@ -78,11 +81,13 @@ class ConsolationViewModel : ObservableObject {
             }
         } else {
             // Add consolation - this is a new consolation and does not already have an id in Firebase
+            updateDocCount()
+            setDateNum()
             if !consolations.dateNum.isEmpty || !consolations.consolationData.isEmpty {
                     var ref: DocumentReference? = nil
                     ref = db.collection("consolations").addDocument(data: [
                         "consolationData": consolations.consolationData,
-                        "dateNum": consolations.dateNum
+                        "dateNum": dateNum
                     ]) { err in
                         if let err = err {
                             print("Error adding consolation: \(err)")
@@ -95,19 +100,31 @@ class ConsolationViewModel : ObservableObject {
         }
         
         
-        func getCurrentDate() -> String {
+        func setCurrentDate() {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .full
             dateFormatter.timeStyle = .none
-            return dateFormatter.string(from: Date())
+            self.date = dateFormatter.string(from: Date())
         }
+    
+    func updateDocCount() {
+        db.collection("consolations").addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot
+            else {
+                print("Error fetching consolations: \(error!)")
+                return
+            }
+            // Update the document count based on the number of documents in the collection
+            self.docCount = snapshot.documents.count
+        }
+    }
+        
+//        func setDateNum() {
+//            dateNum = String(docCount) + " - " + getCurrentDate()
+//        }
         
         func setDateNum() {
-            dateNum = String(docCount) + " - " + getCurrentDate()
-        }
-        
-        func getDateNum() -> String {
-            return dateNum
+            dateNum = String(docCount) + " - " + date
         }
     }
 

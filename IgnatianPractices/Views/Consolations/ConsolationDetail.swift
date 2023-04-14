@@ -16,7 +16,7 @@ struct ConsolationDetail: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TextField(consol.dateNum, text: $consolation.dateNum)
+            TextField(consol.date, text: $consolation.dateNum)
                 .font(.system(size: 25))
                 .fontWeight(.bold)
             TextEditor(text: $consolation.consolationData) // TextEditor is better for multi-line fields

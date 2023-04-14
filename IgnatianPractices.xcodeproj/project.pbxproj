@@ -107,8 +107,7 @@
 				F51803FC29E0FA9500316379 /* BookView.swift */,
 				F51803FE29E1B5F900316379 /* ChapterView.swift */,
 				F518040029E1BDCA00316379 /* VerseView.swift */,
-				F5ED6FCD29E8E890007439AF /* ConsolationView.swift */,
-				F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */,
+				F5ED6FD529E9C4A0007439AF /* Consolations */,
 				F5ED6FD329E99A12007439AF /* DayInReviewView.swift */,
 			);
 			path = Views;
@@ -131,6 +130,15 @@
 				F5ED6FCB29E8E66F007439AF /* ConsolationViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F5ED6FD529E9C4A0007439AF /* Consolations */ = {
+			isa = PBXGroup;
+			children = (
+				F5ED6FCD29E8E890007439AF /* ConsolationView.swift */,
+				F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */,
+			);
+			path = Consolations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
