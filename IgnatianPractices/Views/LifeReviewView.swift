@@ -17,8 +17,25 @@ struct LifeReviewView: View {
     // @StateObject - data is stored within the view.
     
     var body: some View {
-        NavigationView {
-            List {  
+        VStack(alignment: .leading) {
+            Text("Life Review")
+                .font(.largeTitle)
+                .bold()
+                .padding()
+            List {
+                Section {
+                    Text("The Life Review is a tool to help you look back over the last few days or weeks to notice patterns that may warrant your attention.")
+                } header: {
+                    Text("Exercise Description")
+                        .font(.system(size: 18))
+                }
+                Section {
+                    Text("How have your moments in prayer and consolation affected the various parts of your life?")
+                } header: {
+                    Text("Guiding Question")
+                        .font(.system(size: 18))
+                }
+                
                 Section {
                     NavigationLink {
                         VerseView(passage: "PSALM")
@@ -46,11 +63,9 @@ struct LifeReviewView: View {
                     }
                 } header: {
                     Text("Daily Insights")
-                        .font(.headline)
+                        .font(.system(size: 18))
                 }
-            }.background(Color.black)
-                .navigationBarTitle("Life Review")
-                .environment(\.defaultMinListRowHeight, 80)
+            }
         }
         
     }
