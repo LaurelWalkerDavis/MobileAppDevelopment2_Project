@@ -22,7 +22,7 @@ struct ConsolationDetail: View {
                     .fontWeight(.bold)
                 TextEditor(text: $consolation.consolationData) // TextEditor is better for multi-line fields
                     .font(.system(size: 20))
-                    .frame(width: 200, height: 400)
+                    .frame(width: 300, height: 400)
                     .cornerRadius(8)
                 HStack {
                     Spacer()

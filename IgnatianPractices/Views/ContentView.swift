@@ -31,7 +31,7 @@ struct ContentView: View {
                                 .font(.system(size: 25))
                         }
                         NavigationLink {
-                            ConsolationView()
+                            Examen()
                         } label: {
                             Text("Examen")
                                 .font(.system(size: 25))
@@ -43,7 +43,9 @@ struct ContentView: View {
                                 .font(.system(size: 25))
                         }
                     } header: {
-                        Text("Daily exercises").font(.headline)
+                        Text("Daily exercises in the Ignatian tradition")
+                            //.font(.headline)
+                            .font(.system(size:15))
                     }
                 }
                 .background(Color.black)

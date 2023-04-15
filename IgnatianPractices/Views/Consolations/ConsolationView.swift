@@ -24,9 +24,13 @@ struct ConsolationView: View {
             List {
                 Section {
                     Text("A spiritual consolation “is a profound experience of interior joy, consisting in seeing God’s presence in everything. It strengthens faith and hope and also the ability to do good,” - Pope Francis")
-                    Text("Review your day and note 2 or 3 consolations you experienced.")
                 }header: {
                     Text("Exercise Instructions")
+                }
+                Section {
+                    Text("When did I feel joy today? When did I feel close to God and others? When did I notice something beautiful?")
+                }header: {
+                    Text("Guiding Questions")
                 }
                 
                 Section {
@@ -35,7 +39,7 @@ struct ConsolationView: View {
                     } label: {
                         Text("Add New Consolation")
                             .foregroundColor(Color.green)
-                            .font(.system(size: 15))                           
+                            .font(.system(size: 20))
                     }
                 }
                 Section {

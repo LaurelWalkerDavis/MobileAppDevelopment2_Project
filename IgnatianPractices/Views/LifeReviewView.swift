@@ -38,6 +38,12 @@ struct LifeReviewView: View {
                         Text("Consolations")
                             .font(.system(size: 25))
                     }
+                    NavigationLink {
+                        DesolationHistory()
+                    } label: {
+                        Text("Desolations")
+                            .font(.system(size: 25))
+                    }
                 } header: {
                     Text("Daily Insights")
                         .font(.headline)

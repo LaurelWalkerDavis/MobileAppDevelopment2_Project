@@ -9,7 +9,34 @@ import SwiftUI
 
 struct Examen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                Section {
+                    Text("The Examen is one of the most notable Ignatian practices. It involves a contemplative reflection on your day. It consists of two major parts: a review of consolations and desolations.")
+                    Text("Review your day and note 2 or 3 consolations you experienced. Then, note at least 1 desolation you experienced.")
+                }header: {
+                    Text("Exercise Instructions")
+                }
+                Section {
+                    NavigationLink {
+                        ConsolationView()
+                    } label: {
+                        Text("Consolations")
+                            .font(.system(size: 25))
+                    }
+                }
+                Section {
+                    NavigationLink {
+                        DesolationsView()
+                    } label: {
+                        Text("Desolations")
+                            .font(.system(size: 25))
+                    }
+                }
+            }.background(Color.black)
+                .navigationBarTitle("Examen")
+                .environment(\.defaultMinListRowHeight, 80)
+        }
     }
 }
 
