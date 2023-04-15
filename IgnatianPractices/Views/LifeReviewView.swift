@@ -35,40 +35,48 @@ struct LifeReviewView: View {
                     Text("Guiding Question")
                         .font(.system(size: 18))
                 }
-                
                 Section {
-                    NavigationLink {
-                        VerseView(passage: "PSALM")
-                    } label: {
-                        Text("Lectio Divina")
-                            .font(.system(size: 25))
-                    }
-                    NavigationLink {
-                        VerseView(passage: "GOSPEL")
-                    } label: {
-                        Text("Imaging Prayer")
-                            .font(.system(size: 25))
-                    }
-                    NavigationLink {
-                        ConsolationHistory()
-                    } label: {
-                        Text("Consolations")
-                            .font(.system(size: 25))
-                    }
-                    NavigationLink {
-                        DesolationHistory()
-                    } label: {
-                        Text("Desolations")
-                            .font(.system(size: 25))
-                    }
+                    ConsolationEntry()
                 } header: {
-                    Text("Daily Insights")
+                    Text("Consolations")
                         .font(.system(size: 18))
                 }
-            }
+                Section {
+                    DesolationEntry()
+                } header: {
+                    Text("Desolations")
+                        .font(.system(size: 18))
+                }
+            }.listStyle(SidebarListStyle())
         }
         
     }
+                
+//                Section {
+//                    NavigationLink {
+//                        VerseView(passage: "PSALM")
+//                    } label: {
+//                        Text("Lectio Divina")
+//                            .font(.system(size: 25))
+//                    }
+//                    NavigationLink {
+//                        VerseView(passage: "GOSPEL")
+//                    } label: {
+//                        Text("Imaging Prayer")
+//                            .font(.system(size: 25))
+//                    }
+//
+//                    NavigationLink {
+//                        DesolationHistory()
+//                    } label: {
+//                        Text("Desolations")
+//                            .font(.system(size: 25))
+//                    }
+//                } header: {
+//                    Text("Daily Insights")
+//                        .font(.system(size: 18))
+//                }
+
     
     
     struct LifeReviewView_Previews: PreviewProvider {

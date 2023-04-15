@@ -35,6 +35,8 @@
 		F5ED6FE329EA1151007439AF /* DesolationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FE229EA1151007439AF /* DesolationViewModel.swift */; };
 		F5ED6FE529EA12FC007439AF /* DesolationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FE429EA12FC007439AF /* DesolationDetail.swift */; };
 		F5ED6FE729EA2CDD007439AF /* DesolationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FE629EA2CDD007439AF /* DesolationHistory.swift */; };
+		F5ED6FEA29EA4F71007439AF /* ConsolationEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FE929EA4F71007439AF /* ConsolationEntry.swift */; };
+		F5ED6FEC29EA5561007439AF /* DesolationEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FEB29EA5561007439AF /* DesolationEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		F5ED6FE229EA1151007439AF /* DesolationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesolationViewModel.swift; sourceTree = "<group>"; };
 		F5ED6FE429EA12FC007439AF /* DesolationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesolationDetail.swift; sourceTree = "<group>"; };
 		F5ED6FE629EA2CDD007439AF /* DesolationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesolationHistory.swift; sourceTree = "<group>"; };
+		F5ED6FE929EA4F71007439AF /* ConsolationEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationEntry.swift; sourceTree = "<group>"; };
+		F5ED6FEB29EA5561007439AF /* DesolationEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesolationEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 				F5ED6FCD29E8E890007439AF /* ConsolationView.swift */,
 				F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */,
 				F5ED6FD629E9D049007439AF /* ConsolationHistory.swift */,
+				F5ED6FE929EA4F71007439AF /* ConsolationEntry.swift */,
 			);
 			path = Consolations;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				F5ED6FDE29EA0E91007439AF /* DesolationsView.swift */,
 				F5ED6FE429EA12FC007439AF /* DesolationDetail.swift */,
 				F5ED6FE629EA2CDD007439AF /* DesolationHistory.swift */,
+				F5ED6FEB29EA5561007439AF /* DesolationEntry.swift */,
 			);
 			path = Desolations;
 			sourceTree = "<group>";
@@ -275,8 +281,10 @@
 				F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */,
 				F5ED6FDF29EA0E91007439AF /* DesolationsView.swift in Sources */,
 				F5ED6FDB29E9E8BD007439AF /* ImagingPrayer.swift in Sources */,
+				F5ED6FEC29EA5561007439AF /* DesolationEntry.swift in Sources */,
 				F518697B29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift in Sources */,
 				F5ED6FD429E99A12007439AF /* LifeReviewView.swift in Sources */,
+				F5ED6FEA29EA4F71007439AF /* ConsolationEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

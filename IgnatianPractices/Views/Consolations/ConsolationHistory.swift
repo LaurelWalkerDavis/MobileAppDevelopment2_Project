@@ -12,9 +12,10 @@ struct ConsolationHistory: View {
     @State var details = ConsolationModel(dateNum: "", consolationData: "", date: Date())
     
     var body: some View {
-        NavigationView {
+        VStack {
             List {
                 ForEach($consol.consolations) { $cns in
+                    ConsolationDetail(consolation: $cns)
                     NavigationLink {
                         ConsolationDetail(consolation: $cns)
                     } label: {
