@@ -26,7 +26,7 @@ struct ImaginativePrayer: View {
                     Text("4. Write down what you have noticed.")
                         .padding(.vertical, 4)
                 } header: {
-                    Text("The Four Steps")
+                    Text("Invitation")
                         .font(.system(size: 18))
                 }
                 Section {

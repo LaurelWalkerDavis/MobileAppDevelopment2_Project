@@ -30,11 +30,13 @@ struct ConsolationView: View {
                     Text("A spiritual consolation “is a profound experience of interior joy, consisting in seeing God’s presence in everything. It strengthens faith and hope and also the ability to do good,” - Pope Francis")
                 }header: {
                     Text("Exercise Instructions")
+                        .font(.system(size: 18))
                 }
                 Section {
                     Text("When did I feel joy today? When did I feel close to God and others? When did I notice something beautiful?")
                 }header: {
                     Text("Guiding Questions")
+                        .font(.system(size: 18))
                 }
                 
 //                Section {
@@ -50,6 +52,7 @@ struct ConsolationView: View {
                     ConsolationDetail(consolation: $details)
                 }header: {
                     Text("My Consolations")
+                        .font(.system(size: 18))
                 }
                 Section {
                     ForEach($consol.consolations) { $cns in
@@ -61,6 +64,7 @@ struct ConsolationView: View {
                     }
                 } header: {
                     Text("Today's Consolations")
+                        .font(.system(size: 18))
                 }
             }.listStyle(SidebarListStyle())
             

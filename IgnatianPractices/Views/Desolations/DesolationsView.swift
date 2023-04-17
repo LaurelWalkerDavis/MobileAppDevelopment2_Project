@@ -30,11 +30,13 @@ struct DesolationsView: View {
                     Text("A spiritual desolation is an experience of darkness of soul, disturbance in it, movement to things low and earthly, the unquiet of different agitations and temptations, moving to want of confidence, without hope, without love, when one finds oneself all lazy, tepid, sad and as if separated from his Creator and Lord.” - Pope Francis")
                 }header: {
                     Text("Exercise Instructions")
+                        .font(.system(size: 18))
                 }
                 Section {
                     Text("When did I feel hopelessness today? When did I feel distant from God and others? When did I stop seeing beauty?")
                 }header: {
                     Text("Guiding Questions")
+                        .font(.system(size: 18))
                 }
                 
 //                Section {
@@ -50,6 +52,7 @@ struct DesolationsView: View {
                     DesolationDetail(desolation: $details)
                 }header: {
                     Text("My Desolations")
+                        .font(.system(size: 18))
                 }
                 Section {
                     ForEach($desol.desolations) { $des in
@@ -61,6 +64,7 @@ struct DesolationsView: View {
                     }
                 } header: {
                     Text("Today's Desolations")
+                        .font(.system(size: 18))
                 }
             }.listStyle(SidebarListStyle())
             .onAppear {

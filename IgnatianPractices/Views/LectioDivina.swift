@@ -26,7 +26,7 @@ struct LectioDivina: View {
                     Text("4. Write down the word or phrase. Rest with it and be still.")
                         .padding(.vertical, 4)
                 } header: {
-                    Text("The Four Steps")
+                    Text("Invitation")
                         .font(.system(size: 18))
                 }
                 Section {
