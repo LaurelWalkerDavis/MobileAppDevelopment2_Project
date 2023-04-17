@@ -42,6 +42,8 @@
 		F5ED6FF229EDBB68007439AF /* ContemplationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FF129EDBB68007439AF /* ContemplationModel.swift */; };
 		F5ED6FF729EDE9A3007439AF /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FF629EDE9A2007439AF /* NoteModel.swift */; };
 		F5ED6FF929EDEAA0007439AF /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FF829EDEAA0007439AF /* NoteViewModel.swift */; };
+		F5ED6FFB29EDEE2E007439AF /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FFA29EDEE2E007439AF /* NoteView.swift */; };
+		F5ED6FFD29EDF266007439AF /* NoteEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FFC29EDF266007439AF /* NoteEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		F5ED6FF129EDBB68007439AF /* ContemplationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContemplationModel.swift; sourceTree = "<group>"; };
 		F5ED6FF629EDE9A2007439AF /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		F5ED6FF829EDEAA0007439AF /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		F5ED6FFA29EDEE2E007439AF /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		F5ED6FFC29EDF266007439AF /* NoteEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 				F5ED6FDC29EA06A9007439AF /* Examen.swift */,
 				F5ED6FED29EDB9D6007439AF /* Contemplation.swift */,
 				F5ED6FD329E99A12007439AF /* LifeReviewView.swift */,
+				F5ED6FFA29EDEE2E007439AF /* NoteView.swift */,
+				F5ED6FFC29EDF266007439AF /* NoteEntry.swift */,
 				F5ED6FF529EDE471007439AF /* BibleViews */,
 				F5ED6FD529E9C4A0007439AF /* Consolations */,
 				F5ED6FE829EA2D45007439AF /* Desolations */,
@@ -307,9 +313,11 @@
 				F5ED6FE729EA2CDD007439AF /* DesolationHistory.swift in Sources */,
 				F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */,
 				F5ED6FDF29EA0E91007439AF /* DesolationsView.swift in Sources */,
+				F5ED6FFD29EDF266007439AF /* NoteEntry.swift in Sources */,
 				F5ED6FDB29E9E8BD007439AF /* ImaginativePrayer.swift in Sources */,
 				F5ED6FEC29EA5561007439AF /* DesolationEntry.swift in Sources */,
 				F518697B29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift in Sources */,
+				F5ED6FFB29EDEE2E007439AF /* NoteView.swift in Sources */,
 				F5ED6FD429E99A12007439AF /* LifeReviewView.swift in Sources */,
 				F5ED6FEA29EA4F71007439AF /* ConsolationEntry.swift in Sources */,
 				F5ED6FEE29EDB9D6007439AF /* Contemplation.swift in Sources */,

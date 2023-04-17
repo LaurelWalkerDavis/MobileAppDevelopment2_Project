@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ImaginativePrayer: View {
+    @State var details = NoteModel(type: "imaginPrayer", dateNum: "", noteData: "", date: Date()) // for creating a new lectioDivina note
     var body: some View {
         VStack(alignment: .leading) {
             List {
@@ -33,6 +34,12 @@ struct ImaginativePrayer: View {
                     VerseView(passage: "GOSPEL")
                 }header: {
                     Text("Gospel")
+                        .font(.system(size: 18))
+                }
+                Section {
+                    NoteView(note: $details)
+                }header: {
+                    Text("Today, I Noticed...")
                         .font(.system(size: 18))
                 }
             }.listStyle(SidebarListStyle())
