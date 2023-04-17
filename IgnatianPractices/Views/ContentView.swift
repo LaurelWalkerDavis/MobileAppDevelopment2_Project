@@ -24,7 +24,7 @@ struct ContentView: View {
                                 .font(.system(size: 25))
                         }
                         NavigationLink {
-                            ImagingPrayer()
+                            ImaginativePrayer()
                         } label: {
                             Text("Imaginative Prayer")
                                 .font(.system(size: 25))
@@ -33,6 +33,12 @@ struct ContentView: View {
                             Examen()
                         } label: {
                             Text("Examen")
+                                .font(.system(size: 25))
+                        }
+                        NavigationLink {
+                            Contemplation()
+                        } label: {
+                            Text("Contemplation")
                                 .font(.system(size: 25))
                         }
                         NavigationLink {

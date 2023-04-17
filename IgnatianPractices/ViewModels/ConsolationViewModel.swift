@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import CoreData
 
 class ConsolationViewModel : ObservableObject {
     
@@ -27,14 +28,14 @@ class ConsolationViewModel : ObservableObject {
     
     func fetchData(date: Date? = nil) {
         self.consolations.removeAll()
-        //var query = db.collection("consolations")
         let query = Firestore.firestore().collection("consolations")
+                
         if let date = date {
             let calendar = Calendar.current
             let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
             let startDate = calendar.date(from: dateComponents)!
             let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
-            
+
             query
                 .whereField("date", isGreaterThanOrEqualTo: startDate)
                 .whereField("date", isLessThan: endDate).getDocuments() { (querySnapshot, err) in

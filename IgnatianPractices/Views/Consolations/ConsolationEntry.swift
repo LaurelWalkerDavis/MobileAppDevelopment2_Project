@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ConsolationEntry: View {
     @ObservedObject var consol = ConsolationViewModel()
     @State var details = ConsolationModel(dateNum: "", consolationData: "", date: Date()) // for creating a new consolation
+    
     
     var body: some View {
         ScrollView {

@@ -15,7 +15,6 @@ struct VerseView: View {
     var body: some View {
         ScrollView {
             VStack {
-                //chptVersevm.verseData!.content
                 Text(chptVersevm.verseData?.content ?? "").task {
                     await chptVersevm.fetchData(passage)
                 }
