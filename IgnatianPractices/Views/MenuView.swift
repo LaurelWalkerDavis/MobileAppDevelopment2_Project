@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MenuView: View {
     
     @ObservedObject var verseVM = VerseViewModel()
     
@@ -67,11 +67,11 @@ struct ContentView: View {
 
 
 
-struct ContentView_Previews: PreviewProvider {
+struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
-            ContentView().environment(\.colorScheme, .dark)
+            MenuView()
+            MenuView().environment(\.colorScheme, .dark)
         }
     }
 }

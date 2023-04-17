@@ -6,11 +6,9 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift //import this and add @DocumentID to allow Firebase to generate IDs
 
 struct ContemplationModel {
-//    var id : UUID { // have to have this for it to be identifiable
-//        return UUID()
-//    }
     let fileName: String
     let description: String
     let credit: String
