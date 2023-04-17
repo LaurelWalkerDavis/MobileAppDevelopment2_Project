@@ -40,6 +40,8 @@
 		F5ED6FEE29EDB9D6007439AF /* Contemplation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FED29EDB9D6007439AF /* Contemplation.swift */; };
 		F5ED6FF029EDBB1E007439AF /* ContemplationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FEF29EDBB1E007439AF /* ContemplationViewModel.swift */; };
 		F5ED6FF229EDBB68007439AF /* ContemplationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FF129EDBB68007439AF /* ContemplationModel.swift */; };
+		F5ED6FF729EDE9A3007439AF /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FF629EDE9A2007439AF /* NoteModel.swift */; };
+		F5ED6FF929EDEAA0007439AF /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FF829EDEAA0007439AF /* NoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		F5ED6FED29EDB9D6007439AF /* Contemplation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contemplation.swift; sourceTree = "<group>"; };
 		F5ED6FEF29EDBB1E007439AF /* ContemplationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContemplationViewModel.swift; sourceTree = "<group>"; };
 		F5ED6FF129EDBB68007439AF /* ContemplationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContemplationModel.swift; sourceTree = "<group>"; };
+		F5ED6FF629EDE9A2007439AF /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		F5ED6FF829EDEAA0007439AF /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,14 +136,12 @@
 			isa = PBXGroup;
 			children = (
 				F518697C29DA3AAE0074E5E7 /* MenuView.swift */,
-				F51803FC29E0FA9500316379 /* BookView.swift */,
-				F51803FE29E1B5F900316379 /* ChapterView.swift */,
-				F518040029E1BDCA00316379 /* VerseView.swift */,
 				F5ED6FD829E9E8A6007439AF /* LectioDivina.swift */,
 				F5ED6FDA29E9E8BD007439AF /* ImaginativePrayer.swift */,
 				F5ED6FDC29EA06A9007439AF /* Examen.swift */,
 				F5ED6FED29EDB9D6007439AF /* Contemplation.swift */,
 				F5ED6FD329E99A12007439AF /* LifeReviewView.swift */,
+				F5ED6FF529EDE471007439AF /* BibleViews */,
 				F5ED6FD529E9C4A0007439AF /* Consolations */,
 				F5ED6FE829EA2D45007439AF /* Desolations */,
 			);
@@ -153,6 +155,7 @@
 				F5ED6FC929E8E3CF007439AF /* ConsolationModel.swift */,
 				F5ED6FE029EA0EDA007439AF /* DesolationModel.swift */,
 				F5ED6FF129EDBB68007439AF /* ContemplationModel.swift */,
+				F5ED6FF629EDE9A2007439AF /* NoteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				F5ED6FCB29E8E66F007439AF /* ConsolationViewModel.swift */,
 				F5ED6FE229EA1151007439AF /* DesolationViewModel.swift */,
 				F5ED6FEF29EDBB1E007439AF /* ContemplationViewModel.swift */,
+				F5ED6FF829EDEAA0007439AF /* NoteViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -189,6 +193,16 @@
 				F5ED6FEB29EA5561007439AF /* DesolationEntry.swift */,
 			);
 			path = Desolations;
+			sourceTree = "<group>";
+		};
+		F5ED6FF529EDE471007439AF /* BibleViews */ = {
+			isa = PBXGroup;
+			children = (
+				F51803FC29E0FA9500316379 /* BookView.swift */,
+				F51803FE29E1B5F900316379 /* ChapterView.swift */,
+				F518040029E1BDCA00316379 /* VerseView.swift */,
+			);
+			path = BibleViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +300,9 @@
 				F5ED6FE529EA12FC007439AF /* DesolationDetail.swift in Sources */,
 				F51803FF29E1B5F900316379 /* ChapterView.swift in Sources */,
 				F51803FD29E0FA9500316379 /* BookView.swift in Sources */,
+				F5ED6FF929EDEAA0007439AF /* NoteViewModel.swift in Sources */,
 				F5ED6FCA29E8E3CF007439AF /* ConsolationModel.swift in Sources */,
+				F5ED6FF729EDE9A3007439AF /* NoteModel.swift in Sources */,
 				F518698B29DA5A200074E5E7 /* BibleModel.swift in Sources */,
 				F5ED6FE729EA2CDD007439AF /* DesolationHistory.swift in Sources */,
 				F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */,
