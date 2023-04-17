@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct LifeReviewView: View {
-    @State var lectioDetails = NoteModel(type: "lectioDivina", dateNum: "", noteData: "", date: Date()) // for viewing a lectioDivina note
-    @State var imaginDetails = NoteModel(type: "imaginPrayer", dateNum: "", noteData: "", date: Date()) // for viewing an imaginPrayer note)
+    @State var lectioDetails = NoteModel(type: "lectioDivina", dateStr: "", noteData: "", date: Date()) // for viewing a lectioDivina note
+    @State var imaginDetails = NoteModel(type: "imaginPrayer", dateStr: "", noteData: "", date: Date()) // for viewing an imaginPrayer note)
+    @State var conDetails = NoteModel(type: "contemplation", dateStr: "", noteData: "", date: Date()) // for creating a new contemplation note
     
     // @State
     // @ObservedObject - used to observe changes to an existing instance of an object. owned an managed by an external entity. data is not stored within the view.
@@ -56,6 +57,12 @@ struct LifeReviewView: View {
                     DesolationEntry()
                 } header: {
                     Text("Desolations")
+                        .font(.system(size: 18))
+                }
+                Section {
+                    NoteEntry(details: conDetails)
+                } header: {
+                    Text("Contemplation")
                         .font(.system(size: 18))
                 }
             }.listStyle(SidebarListStyle())

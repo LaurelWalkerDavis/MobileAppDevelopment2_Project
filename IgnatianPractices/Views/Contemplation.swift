@@ -10,7 +10,7 @@ import Foundation
 
 struct Contemplation: View {
     @ObservedObject var contemp = ContemplationViewModel()
-    
+    @State var details = NoteModel(type: "contemplation", dateStr: "", noteData: "", date: Date()) // for creating a new contemplation note
     
     var body: some View {
         let image = contemp.getTodaysImage()
@@ -29,8 +29,8 @@ struct Contemplation: View {
                 }
                 Section {
                     Text("1. Take a few moments to look closely at the image below.")
-                    Text("2. What do you notice about Christ in the image?")
-                    Text("3. Where do you see yourself in the image?")
+                    Text("2. Where do you see beauty?")
+                    Text("3. Note your reflections.")
                         .padding(.vertical, 4)
                 } header: {
                     Text("Invitation")
@@ -44,6 +44,12 @@ struct Contemplation: View {
                     Text(image.credit).font(.system(size: 12))
                 } header: {
                     Text(image.description).font(.system(size: 18))
+                }
+                Section {
+                    NoteView(note: $details)
+                }header: {
+                    Text("I see beauty in...")
+                        .font(.system(size: 18))
                 }
             }.listStyle(SidebarListStyle())
         }

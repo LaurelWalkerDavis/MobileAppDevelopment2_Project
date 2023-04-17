@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteEntry: View {
     @ObservedObject var note = NoteViewModel()
-    @State var details = NoteModel(type: "", dateNum: "", noteData: "", date: Date()) // for creating a new consolation
+    @State var details = NoteModel(type: "", dateStr: "", noteData: "", date: Date()) // for creating a new consolation
         
         var body: some View {
             ScrollView {
@@ -17,7 +17,7 @@ struct NoteEntry: View {
                     //List {
                     ForEach($note.notes) { $nt in
                         if nt.type == details.type {
-                            Text(nt.dateNum)
+                            Text(nt.dateStr)
                                 .bold()
                             Text(nt.noteData)
                                 .padding(.leading, 30)

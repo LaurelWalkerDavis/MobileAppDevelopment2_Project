@@ -147,9 +147,9 @@
 				F5ED6FD329E99A12007439AF /* LifeReviewView.swift */,
 				F5ED6FFA29EDEE2E007439AF /* NoteView.swift */,
 				F5ED6FFC29EDF266007439AF /* NoteEntry.swift */,
-				F5ED6FF529EDE471007439AF /* BibleViews */,
 				F5ED6FD529E9C4A0007439AF /* Consolations */,
 				F5ED6FE829EA2D45007439AF /* Desolations */,
+				F5ED6FF529EDE471007439AF /* BibleViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";

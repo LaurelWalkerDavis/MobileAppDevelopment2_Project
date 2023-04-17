@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImaginativePrayer: View {
-    @State var details = NoteModel(type: "imaginPrayer", dateNum: "", noteData: "", date: Date()) // for creating a new lectioDivina note
+    @State var details = NoteModel(type: "imaginPrayer", dateStr: "", noteData: "", date: Date()) // for creating a new lectioDivina note
     var body: some View {
         VStack(alignment: .leading) {
             List {

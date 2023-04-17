@@ -12,6 +12,7 @@ struct DesolationDetail: View {
     @Binding var desolation : DesolationModel // binding allows users to interact with the variable. need to add $.
     //@Binding var dateNum : String
     @ObservedObject var consol = DesolationViewModel()
+    @State var saved = false
     
     
     var body: some View {
@@ -27,6 +28,10 @@ struct DesolationDetail: View {
                 HStack {
                     Spacer()
                     Button(action: {
+                        saved = true
+                        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in DispatchQueue.main.async
+                            { saved = false }
+                        }
                         consol.saveData(desolations: desolation)
                         desolation.dateNum = ""  //clear previous content display
                         desolation.desolationData = "" //clear previous content display
@@ -35,7 +40,7 @@ struct DesolationDetail: View {
                             .foregroundColor(Color.white)
                             .frame(width: 200, height: 50)
                             .cornerRadius(8)
-                            .background(Color.brown)
+                            .background(saved ? Color.green : Color.brown)
                     })
                     Spacer()
                 }

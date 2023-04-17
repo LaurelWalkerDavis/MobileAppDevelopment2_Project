@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LectioDivina: View {
-    @State var details = NoteModel(type: "lectioDivina", dateNum: "", noteData: "", date: Date()) // for creating a new lectioDivina note
+    @State var details = NoteModel(type: "lectioDivina", dateStr: "", noteData: "", date: Date()) // for creating a new lectioDivina note
     var body: some View {
         VStack(alignment: .leading) {
             List {

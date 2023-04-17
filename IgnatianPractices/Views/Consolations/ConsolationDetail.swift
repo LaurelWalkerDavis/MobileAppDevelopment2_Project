@@ -12,6 +12,7 @@ struct ConsolationDetail: View {
     @Binding var consolation : ConsolationModel // binding allows users to interact with the variable. need to add $.
     //@Binding var dateNum : String
     @ObservedObject var consol = ConsolationViewModel()
+    @State var saved = false
     
     
     var body: some View {
@@ -27,6 +28,10 @@ struct ConsolationDetail: View {
                 HStack {
                     Spacer()
                     Button(action: {
+                        saved = true
+                        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in DispatchQueue.main.async
+                            { saved = false }
+                        }
                         consol.saveData(consolations: consolation)
                         consolation.dateNum = ""  //clear previous content display
                         consolation.consolationData = "" //clear previous content display
@@ -35,7 +40,7 @@ struct ConsolationDetail: View {
                             .foregroundColor(Color.white)
                             .frame(width: 200, height: 50)
                             .cornerRadius(8)
-                            .background(Color.brown)
+                            .background(saved ? Color.green : Color.brown)
                     })
                     Spacer()
                 }

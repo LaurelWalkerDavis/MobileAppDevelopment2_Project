@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift //import this and add @DocumentID to allow Firebas
 struct NoteModel : Codable, Identifiable {
     @DocumentID var id: String?
     var type: String
-    var dateNum: String
+    var dateStr: String
     var noteData: String
     var date: Date
 }
