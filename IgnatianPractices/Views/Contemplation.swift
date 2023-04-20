@@ -37,14 +37,14 @@ struct Contemplation: View {
                         .font(.system(size: 18))
                 }
                 Section {
-                    Image(image.fileName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 400, height: 400, alignment: .center)
-                    Text(image.credit).font(.system(size: 12))
-                } header: {
-                    Text(image.description).font(.system(size: 18))
-                }
+                        Image(image.fileName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 400, height: 400, alignment: .center)
+                        Text(image.credit).font(.system(size: 12))
+                    } header: {
+                        Text(image.description).font(.system(size: 18))
+                    }                
                 Section {
                     NoteView(note: $details)
                 }header: {

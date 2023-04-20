@@ -17,6 +17,9 @@
 		F518698229DA3AAF0074E5E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F518698129DA3AAF0074E5E7 /* Preview Assets.xcassets */; };
 		F518698929DA50850074E5E7 /* BibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518698829DA50850074E5E7 /* BibleViewModel.swift */; };
 		F518698B29DA5A200074E5E7 /* BibleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518698A29DA5A200074E5E7 /* BibleModel.swift */; };
+		F5D4968829F1CD13002D7248 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4968729F1CD13002D7248 /* LoginViewModel.swift */; };
+		F5D4968A29F1CEB8002D7248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D4968929F1CEB8002D7248 /* GoogleService-Info.plist */; };
+		F5D4968C29F1D04B002D7248 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4968B29F1D04B002D7248 /* LoginView.swift */; };
 		F5ED6FC429E8E074007439AF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F5ED6FC329E8E074007439AF /* FirebaseAnalytics */; };
 		F5ED6FC629E8E074007439AF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F5ED6FC529E8E074007439AF /* FirebaseFirestore */; };
 		F5ED6FC829E8E074007439AF /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F5ED6FC729E8E074007439AF /* FirebaseFirestoreSwift */; };
@@ -24,7 +27,6 @@
 		F5ED6FCC29E8E66F007439AF /* ConsolationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCB29E8E66F007439AF /* ConsolationViewModel.swift */; };
 		F5ED6FCE29E8E890007439AF /* ConsolationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCD29E8E890007439AF /* ConsolationView.swift */; };
 		F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */; };
-		F5ED6FD229E8ED7A007439AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */; };
 		F5ED6FD429E99A12007439AF /* LifeReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FD329E99A12007439AF /* LifeReviewView.swift */; };
 		F5ED6FD729E9D049007439AF /* ConsolationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FD629E9D049007439AF /* ConsolationHistory.swift */; };
 		F5ED6FD929E9E8A6007439AF /* LectioDivina.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FD829E9E8A6007439AF /* LectioDivina.swift */; };
@@ -58,11 +60,13 @@
 		F518698129DA3AAF0074E5E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F518698829DA50850074E5E7 /* BibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewModel.swift; sourceTree = "<group>"; };
 		F518698A29DA5A200074E5E7 /* BibleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleModel.swift; sourceTree = "<group>"; };
+		F5D4968729F1CD13002D7248 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F5D4968929F1CEB8002D7248 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5D4968B29F1D04B002D7248 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F5ED6FC929E8E3CF007439AF /* ConsolationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationModel.swift; sourceTree = "<group>"; };
 		F5ED6FCB29E8E66F007439AF /* ConsolationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationViewModel.swift; sourceTree = "<group>"; };
 		F5ED6FCD29E8E890007439AF /* ConsolationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationView.swift; sourceTree = "<group>"; };
 		F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationDetail.swift; sourceTree = "<group>"; };
-		F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5ED6FD329E99A12007439AF /* LifeReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeReviewView.swift; sourceTree = "<group>"; };
 		F5ED6FD629E9D049007439AF /* ConsolationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationHistory.swift; sourceTree = "<group>"; };
 		F5ED6FD829E9E8A6007439AF /* LectioDivina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectioDivina.swift; sourceTree = "<group>"; };
@@ -118,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				F518697A29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift */,
-				F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */,
+				F5D4968929F1CEB8002D7248 /* GoogleService-Info.plist */,
 				F518697E29DA3AAF0074E5E7 /* Assets.xcassets */,
 				F518699029DA5AD20074E5E7 /* ViewModels */,
 				F518698F29DA5AC50074E5E7 /* Models */,
@@ -139,6 +143,7 @@
 		F518698E29DA5AB80074E5E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F5D4968B29F1D04B002D7248 /* LoginView.swift */,
 				F518697C29DA3AAE0074E5E7 /* MenuView.swift */,
 				F5ED6FD829E9E8A6007439AF /* LectioDivina.swift */,
 				F5ED6FDA29E9E8BD007439AF /* ImaginativePrayer.swift */,
@@ -175,6 +180,7 @@
 				F5ED6FE229EA1151007439AF /* DesolationViewModel.swift */,
 				F5ED6FEF29EDBB1E007439AF /* ContemplationViewModel.swift */,
 				F5ED6FF829EDEAA0007439AF /* NoteViewModel.swift */,
+				F5D4968729F1CD13002D7248 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -279,7 +285,7 @@
 			files = (
 				F518698229DA3AAF0074E5E7 /* Preview Assets.xcassets in Resources */,
 				F518697F29DA3AAF0074E5E7 /* Assets.xcassets in Resources */,
-				F5ED6FD229E8ED7A007439AF /* GoogleService-Info.plist in Resources */,
+				F5D4968A29F1CEB8002D7248 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +298,7 @@
 			files = (
 				F5ED6FD729E9D049007439AF /* ConsolationHistory.swift in Sources */,
 				F518697D29DA3AAE0074E5E7 /* MenuView.swift in Sources */,
+				F5D4968829F1CD13002D7248 /* LoginViewModel.swift in Sources */,
 				F518040329E3608500316379 /* VerseViewModel.swift in Sources */,
 				F518698929DA50850074E5E7 /* BibleViewModel.swift in Sources */,
 				F5ED6FF029EDBB1E007439AF /* ContemplationViewModel.swift in Sources */,
@@ -299,6 +306,7 @@
 				F5ED6FCC29E8E66F007439AF /* ConsolationViewModel.swift in Sources */,
 				F5ED6FF229EDBB68007439AF /* ContemplationModel.swift in Sources */,
 				F5ED6FE329EA1151007439AF /* DesolationViewModel.swift in Sources */,
+				F5D4968C29F1D04B002D7248 /* LoginView.swift in Sources */,
 				F5ED6FDD29EA06A9007439AF /* Examen.swift in Sources */,
 				F5ED6FCE29E8E890007439AF /* ConsolationView.swift in Sources */,
 				F5ED6FD929E9E8A6007439AF /* LectioDivina.swift in Sources */,
@@ -449,6 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IgnatianPractices/Preview Content\"";
+				DEVELOPMENT_TEAM = JQM737S83P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -477,6 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IgnatianPractices/Preview Content\"";
+				DEVELOPMENT_TEAM = JQM737S83P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
