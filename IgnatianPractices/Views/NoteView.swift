@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteView: View {        
     @Binding var note : NoteModel // binding allows users to interact with the variable. need to add $.
-    @ObservedObject var noteView = NoteViewModel()
+    @ObservedObject var noteView = NoteViewModel()    
     @State private var saved = false
     
     

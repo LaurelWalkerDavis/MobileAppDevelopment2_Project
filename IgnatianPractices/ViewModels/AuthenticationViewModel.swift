@@ -27,7 +27,6 @@ class AuthenticationViewModel : ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var confirmPassword = ""
-    //@Published var handle: AuthStateDidChangeListenerHandle?
     
     @Published var isValid  = false
     @Published var flow: AuthenticationFlow = .login
@@ -85,66 +84,12 @@ class AuthenticationViewModel : ObservableObject {
       password = ""
       confirmPassword = ""
     }
+    
+    func getUser() -> User? {
+        return user
+    }
   }
     
-//    let auth = Auth.auth()
-//
-//    var isSignedIn: Bool {
-//        return auth.currentUser != nil
-//    }
-//
-//    func login(email: String, password: String) {
-//        Auth.auth().signIn(withEmail: email, password: password) {
-//            result, error in guard result != nil, error == nil else {
-//                return
-//            } //successful login
-//
-//
-//        }
-//    }
-//    func signup(email: String, password: String) {
-//        auth.createUser(withEmail: email, password: password) {
-//            result, error in guard result != nil, error == nil else {
-//                return
-//            } //successful signup
-//        }
-//    }
-//    func signOut() {
-//        do {
-//          try auth.signOut()
-//        } catch let signOutError as NSError {
-//          print("Error signing out: %@", signOutError)
-//        }
-//    }
-//
-//    func deleteAccount() {
-//        do {
-//          try auth.signOut()
-//        } catch let signOutError as NSError {
-//          print("Error signing out: %@", signOutError)
-//        }
-//    }
-    
-    
-    
-//    func startListening() {
-//        handle = Auth.auth().addStateDidChangeListener { auth, user in
-//            // Handle changes to the user authentication state
-//            if let user = user {
-//                MenuView()
-//                // User is signed in
-//            } else {
-//                AuthView()
-//                // User is signed out
-//            }
-//        }
-//    }
-//
-//    func stopListening() {
-//        if let handle = handle {
-//            Auth.auth().removeStateDidChangeListener(handle)
-//        }
-//    }
 
 
 // MARK: - Email and Password Authentication

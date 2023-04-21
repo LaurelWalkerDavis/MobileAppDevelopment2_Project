@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//import FirebaseAuth
 import Combine
 
 
@@ -21,9 +20,7 @@ struct LoginView: View {
     
     @FocusState private var focus: FocusableField?
     
-    //@Binding var currentViewShowing: String
     @AppStorage("uid") var userID: String = ""
-    //@State private var loggedIn = false
     @StateObject var log = AuthenticationViewModel()
     @State var email = ""
     @State var password = ""
@@ -35,14 +32,6 @@ struct LoginView: View {
         }
       }
     }
-    
-//    var body: some View {
-//        if log.isSignedIn {
-//            MenuView()
-//        } else {
-//            content
-//        }
-//    }
     
     var body: some View {
         NavigationView {
@@ -105,25 +94,7 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 
-                //                Button(action: {
-                //                    log.login(email: email, password: password)
-                ////                    loggedIn = true
-                ////                    withAnimation {
-                ////                        userID = log.auth.currentUser!.uid
-                ////                    }
-                //                    NavigationLink(destination: MenuView(), isActive: log.isSignedIn)
-                //                }, label: {
-                //                    Text("Sign in")
-                //                        .foregroundColor(Color.white)
-                //                        .frame(width: 200, height: 50)
-                //                        .cornerRadius(8)
-                //                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.brown))
-                //                })
-                //                Button(action: {withAnimation {self.currentViewShowing = "signup"}}) {
-                //                    Text("Create new account")
-                //                        .foregroundColor(.blue.opacity(0.7))
-                //                }
-                
+
                 HStack {
                     Text("Don't have an account yet?")
                     Button(action: { viewModel.switchFlow() }) {
@@ -135,11 +106,7 @@ struct LoginView: View {
                 
                 Spacer()
                 Spacer()
-                //            }.onAppear {
-                //                Auth.auth().addStateDidChangeListener {
-                //                    auth, user in if log.isSignedIn { NavigationLink(destination: MenuView()) }
-                //                }
-                //            }
+
             }
         }.padding()
     }

@@ -9,16 +9,8 @@ import SwiftUI
 import Combine
 
 struct AuthView: View {
-    //@State private var currentViewShowing: String = "login" // login or signup
     @EnvironmentObject var viewModel: AuthenticationViewModel
-    
-//    var body: some View {
-//        if(currentViewShowing == "login") {
-//            LoginView(currentViewShowing: $currentViewShowing)
-//        } else {
-//            SignUpView(currentViewShowing: $currentViewShowing)
-//        }
-//    }
+
     var body: some View {
       VStack {
         switch viewModel.flow {

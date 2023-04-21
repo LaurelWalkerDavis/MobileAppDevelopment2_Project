@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// see https://michael-ginn.medium.com/creating-optional-viewbuilder-parameters-in-swiftui-views-a0d4e3e1a0ae
+
 extension AuthenticatedView where Unauthenticated == EmptyView {
   init(@ViewBuilder content: @escaping () -> Content) {
     self.unauthenticated = nil

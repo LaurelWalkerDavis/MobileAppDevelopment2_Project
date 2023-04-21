@@ -16,22 +16,6 @@ private enum FocusableField: Hashable {
 }
 
 struct SignUpView: View {
-    //@Binding var currentViewShowing: String
-    //@AppStorage("uid") var userID: String = ""
-    //@AppStorage("identifier") var userEmail: String = ""
-    //@State private var loggedIn = false
-    //@StateObject var log = AuthenticationViewModel()
-    //@State var email = ""
-    //@State var password = ""
-    
-//    var body: some View {
-//        if log.isSignedIn {
-//            MenuView()
-//        } else {
-//            content
-//        }
-//    }
-    
     @EnvironmentObject var viewModel: AuthenticationViewModel
     @Environment(\.dismiss) var dismiss
 
@@ -94,26 +78,7 @@ struct SignUpView: View {
                     }
                 }.padding()
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
-                //                Button(action: {
-                //                    log.signup(email: email, password: password)
-                //                    withAnimation {
-                //                        userID = log.auth.currentUser!.uid
-                //                    }
-                //                    withAnimation {
-                //                        userEmail = log.auth.currentUser!.email!
-                //                    }
-                //                }, label: {
-                //                    Text("Create Account")
-                //                        .foregroundColor(Color.white)
-                //                        .frame(width: 200, height: 50)
-                //                        .cornerRadius(8)
-                //                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.brown))
-                //                })
-                //                Button(action: {withAnimation {self.currentViewShowing = "login"}}) {
-                //                    Text("Already have an account?")
-                //                        .foregroundColor(.blue.opacity(0.7))
-                //                }
-                
+              
                 if !viewModel.errorMessage.isEmpty {
                   VStack {
                     Text(viewModel.errorMessage)
@@ -151,11 +116,7 @@ struct SignUpView: View {
                 Spacer()
                 Spacer()
             }
-//            }.onAppear {
-//                Auth.auth().addStateDidChangeListener {
-//                    auth, user in if log.isSignedIn { loggedIn = true}
-//                }
-//            }
+
         }.padding()
     }
 }
