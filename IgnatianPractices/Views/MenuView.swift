@@ -11,13 +11,20 @@ import FirebaseAuth
 struct MenuView: View {
     @AppStorage("uid") var userID: String = ""
     @ObservedObject var verseVM = VerseViewModel()
+    @StateObject var log = AuthenticationViewModel()
     
     var body: some View {
-        if userID == "" {
-            AuthView()
-        } else {
-            Text("Logged In! \nYour user id is \(userID)").multilineTextAlignment(.trailing)
-        }
+        //        if userID == "" {
+        //            AuthView()
+        //        } else {
+        //            VStack {
+        //                Text("Logged in \n\(userID)").multilineTextAlignment(.trailing).foregroundColor(.blue.opacity(0.7))
+        //                Button(action: {log.signOut()}) {
+        //                    Text("Log out")
+        //                        .multilineTextAlignment(.trailing)
+        //                        .foregroundColor(.blue.opacity(0.7))
+        //                }
+        //            }
         
         NavigationView {
             List {
@@ -68,7 +75,7 @@ struct MenuView: View {
             Text("")
         } // .alert addresses error handling
     }
-        
+    
     
 }
 
@@ -81,4 +88,6 @@ struct MenuView_Previews: PreviewProvider {
             MenuView().environment(\.colorScheme, .dark)
         }
     }
+    
+    
 }
