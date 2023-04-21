@@ -17,12 +17,12 @@ private enum FocusableField: Hashable {
 
 struct SignUpView: View {
     //@Binding var currentViewShowing: String
-    @AppStorage("uid") var userID: String = ""
-    @AppStorage("identifier") var userEmail: String = ""
-    @State private var loggedIn = false
-    @StateObject var log = AuthenticationViewModel()
-    @State var email = ""
-    @State var password = ""
+    //@AppStorage("uid") var userID: String = ""
+    //@AppStorage("identifier") var userEmail: String = ""
+    //@State private var loggedIn = false
+    //@StateObject var log = AuthenticationViewModel()
+    //@State var email = ""
+    //@State var password = ""
     
 //    var body: some View {
 //        if log.isSignedIn {
@@ -81,6 +81,19 @@ struct SignUpView: View {
                         }
                 }.padding()
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
+                
+                HStack {
+                  Image(systemName: "checkmark.shield.fill")
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
+                  SecureField("Confirm password", text: $viewModel.confirmPassword)
+                    .focused($focus, equals: .confirmPassword)
+                    .submitLabel(.go)
+                    .onSubmit {
+                      signUpWithEmailPassword()
+                    }
+                }.padding()
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
                 //                Button(action: {
                 //                    log.signup(email: email, password: password)
                 //                    withAnimation {
@@ -100,6 +113,13 @@ struct SignUpView: View {
                 //                    Text("Already have an account?")
                 //                        .foregroundColor(.blue.opacity(0.7))
                 //                }
+                
+                if !viewModel.errorMessage.isEmpty {
+                  VStack {
+                    Text(viewModel.errorMessage)
+                      .foregroundColor(Color(UIColor.systemRed))
+                  }
+                }
                 
                 Button(action: signUpWithEmailPassword) {
                     if viewModel.authenticationState != .authenticating {
