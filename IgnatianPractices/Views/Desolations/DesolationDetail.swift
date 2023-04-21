@@ -10,7 +10,6 @@ import SwiftUI
 struct DesolationDetail: View {
     
     @Binding var desolation : DesolationModel // binding allows users to interact with the variable. need to add $.
-    //@Binding var dateNum : String
     @ObservedObject var consol = DesolationViewModel()
     @State var saved = false
     

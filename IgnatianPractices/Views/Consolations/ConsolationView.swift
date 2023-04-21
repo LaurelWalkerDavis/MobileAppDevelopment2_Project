@@ -39,15 +39,6 @@ struct ConsolationView: View {
                         .font(.system(size: 18))
                 }
                 
-//                Section {
-//                    NavigationLink {
-//                        ConsolationDetail(consolation: $details)
-//                    } label: {
-//                        Text("Add New Consolation")
-//                            .foregroundColor(Color.green)
-//                            .font(.system(size: 20))
-//                    }
-//                }
                 Section {
                     ConsolationDetail(consolation: $details)
                 }header: {

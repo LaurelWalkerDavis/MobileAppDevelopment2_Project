@@ -9,22 +9,11 @@ import SwiftUI
 import FirebaseAuth
 
 struct MenuView: View {
-    @AppStorage("uid") var userID: String = ""
+    //@AppStorage("uid") var userID: String = ""
     @ObservedObject var verseVM = VerseViewModel()
     @StateObject var log = AuthenticationViewModel()
     
     var body: some View {
-        //        if userID == "" {
-        //            AuthView()
-        //        } else {
-        //            VStack {
-        //                Text("Logged in \n\(userID)").multilineTextAlignment(.trailing).foregroundColor(.blue.opacity(0.7))
-        //                Button(action: {log.signOut()}) {
-        //                    Text("Log out")
-        //                        .multilineTextAlignment(.trailing)
-        //                        .foregroundColor(.blue.opacity(0.7))
-        //                }
-        //            }
         
         NavigationView {
             List {

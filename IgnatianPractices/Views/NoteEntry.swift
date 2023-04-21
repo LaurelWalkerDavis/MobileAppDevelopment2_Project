@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseAuth
 
 struct NoteEntry: View {
     @ObservedObject var note = NoteViewModel()

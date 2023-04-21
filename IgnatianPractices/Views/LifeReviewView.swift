@@ -11,10 +11,7 @@ struct LifeReviewView: View {
     @State var lectioDetails = NoteModel(type: "lectioDivina", dateStr: "", noteData: "", date: Date()) // for viewing a lectioDivina note
     @State var imaginDetails = NoteModel(type: "imaginPrayer", dateStr: "", noteData: "", date: Date()) // for viewing an imaginPrayer note)
     @State var conDetails = NoteModel(type: "contemplation", dateStr: "", noteData: "", date: Date()) // for creating a new contemplation note
-    
-    // @State
-    // @ObservedObject - used to observe changes to an existing instance of an object. owned an managed by an external entity. data is not stored within the view.
-    // @StateObject - data is stored within the view.
+
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -69,33 +66,7 @@ struct LifeReviewView: View {
         }
         
     }
-                
-//                Section {
-//                    NavigationLink {
-//                        VerseView(passage: "PSALM")
-//                    } label: {
-//                        Text("Lectio Divina")
-//                            .font(.system(size: 25))
-//                    }
-//                    NavigationLink {
-//                        VerseView(passage: "GOSPEL")
-//                    } label: {
-//                        Text("Imaging Prayer")
-//                            .font(.system(size: 25))
-//                    }
-//
-//                    NavigationLink {
-//                        DesolationHistory()
-//                    } label: {
-//                        Text("Desolations")
-//                            .font(.system(size: 25))
-//                    }
-//                } header: {
-//                    Text("Daily Insights")
-//                        .font(.system(size: 18))
-//                }
-
-    
+   
     
     struct LifeReviewView_Previews: PreviewProvider {
         static var previews: some View {

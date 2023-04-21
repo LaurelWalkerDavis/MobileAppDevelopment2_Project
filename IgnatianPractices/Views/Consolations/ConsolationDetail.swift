@@ -46,19 +46,7 @@ struct ConsolationDetail: View {
                 }
             }
         }.padding()
-        
-        //        .toolbar {
-        //            ToolbarItem(placement: .navigationBarTrailing) {
-        //                Button {
-        //                    consol.saveData(consolations: consolation)
-        //                    consolation.dateNum = ""  //clear previous content display
-        //                    consolation.consolationData = "" //clear previous content display
-        //                } label: {
-        //                    Text("Save")
-        //                }
-        //
-        //            }
-        //        }
+
     }
     
     

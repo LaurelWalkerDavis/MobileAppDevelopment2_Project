@@ -13,12 +13,7 @@ struct DesolationsView: View {
     @State var details = DesolationModel(dateNum: "", desolationData: "", date: Date()) // for creating a new desolation
     @State var email = ""
     @State var today : Date = Date()
-    // @State
-    // @ObservedObject - used to observe changes to an existing instance of an object. owned an managed by an external entity. data is not stored within the view.
-    // @StateObject - data is stored within the view.
-    
-    
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Daily Desolations")
@@ -37,17 +32,8 @@ struct DesolationsView: View {
                 }header: {
                     Text("Guiding Questions")
                         .font(.system(size: 18))
-                }
-                
-//                Section {
-//                    NavigationLink {
-//                        DesolationDetail(desolation: $details)
-//                    } label: {
-//                        Text("Add New Desolation")
-//                            .foregroundColor(Color.green)
-//                            .font(.system(size: 20))
-//                    }
-//                }
+                }                
+
                 Section {
                     DesolationDetail(desolation: $details)
                 }header: {
