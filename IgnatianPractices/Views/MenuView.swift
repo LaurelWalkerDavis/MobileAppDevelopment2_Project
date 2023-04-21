@@ -6,66 +6,69 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct MenuView: View {
-    
+    @AppStorage("uid") var userID: String = ""
     @ObservedObject var verseVM = VerseViewModel()
     
     var body: some View {
-            ZStack {                
-//                Image("ChiRho")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .edgesIgnoringSafeArea(.all)
-//                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-//                    .background(Color.white.opacity(0.8)) // add a color overlay if needed
-                NavigationView {
-                    List {
-                        Section {
-                            NavigationLink {
-                                LectioDivina()
-                            } label: {
-                                Text("Lectio Divina")
-                                    .font(.system(size: 25))
-                            }
-                            NavigationLink {
-                                ImaginativePrayer()
-                            } label: {
-                                Text("Imaginative Prayer")
-                                    .font(.system(size: 25))
-                            }
-                            NavigationLink {
-                                Examen()
-                            } label: {
-                                Text("Examen")
-                                    .font(.system(size: 25))
-                            }
-                            NavigationLink {
-                                Contemplation()
-                            } label: {
-                                Text("Contemplation")
-                                    .font(.system(size: 25))
-                            }
-                            NavigationLink {
-                                LifeReviewView()
-                            } label: {
-                                Text("Life Review")
-                                    .font(.system(size: 25))
-                            }
-                        } header: {
-                            Text("Daily exercises in the Ignatian tradition")
-                            //.font(.headline)
-                                .font(.system(size:15))
-                        }
+        if userID == "" {
+            AuthView()
+        } else {
+            Text("Logged In! \nYour user id is \(userID)").multilineTextAlignment(.trailing)
+        }
+        
+        NavigationView {
+            List {
+                Section {
+                    Image("Logo2")
+                        .resizable()
+                        .scaledToFit()
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 500)
+                    NavigationLink {
+                        LectioDivina()
+                    } label: {
+                        Text("Lectio Divina")
+                            .font(.system(size: 25))
                     }
-                    .navigationBarTitle("Pocket Monk")
+                    NavigationLink {
+                        ImaginativePrayer()
+                    } label: {
+                        Text("Imaginative Prayer")
+                            .font(.system(size: 25))
+                    }
+                    NavigationLink {
+                        Examen()
+                    } label: {
+                        Text("Examen")
+                            .font(.system(size: 25))
+                    }
+                    NavigationLink {
+                        Contemplation()
+                    } label: {
+                        Text("Contemplation")
+                            .font(.system(size: 25))
+                    }
+                    NavigationLink {
+                        LifeReviewView()
+                    } label: {
+                        Text("Life Review")
+                            .font(.system(size: 25))
+                    }
+                    
                 }
-                .listStyle(.grouped)
-                .alert(isPresented: $verseVM.hasError, error: verseVM.error) {
-                    Text("")
-                } // .alert addresses error handling
-            }.environment(\.defaultMinListRowHeight, 80)
+            }
+            .environment(\.defaultMinListRowHeight, 80)
+        }
+        
+        .listStyle(.grouped)
+        .alert(isPresented: $verseVM.hasError, error: verseVM.error) {
+            Text("")
+        } // .alert addresses error handling
     }
+        
     
 }
 

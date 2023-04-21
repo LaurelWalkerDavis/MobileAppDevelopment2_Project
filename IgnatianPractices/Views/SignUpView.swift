@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  SignUpView.swift
 //  IgnatianPractices
 //
 //  Created by Laurel Walker Davis on 4/20/23.
@@ -8,23 +8,14 @@
 import SwiftUI
 import FirebaseAuth
 
-struct LoginView: View {
+struct SignUpView: View {
     @Binding var currentViewShowing: String
-    @AppStorage("username") var username: String = ""
-    @State private var loggedIn = false
+    @AppStorage("uid") var userID: String = ""
     @StateObject var log = LoginViewModel()
     @State var email = ""
     @State var password = ""
     
     var body: some View {
-        if loggedIn {
-            MenuView()
-        } else {
-            content
-        }
-    }
-    
-    var content: some View {
         NavigationView {
             VStack {
                 Image("Logo2")
@@ -33,7 +24,7 @@ struct LoginView: View {
                     .edgesIgnoringSafeArea(.all)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 500)
                     .background(Color.white.opacity(0.2)) // add a color overlay if needed
-                Text("Welcome Back!").font(.largeTitle).bold()
+                Text("Create an Account").font(.largeTitle).bold()
                 HStack {
                     Image(systemName: "at.circle.fill")
                         .font(.system(size: 30))
@@ -49,34 +40,30 @@ struct LoginView: View {
                 }.padding()
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
                 Button(action: {
-                    log.login(email: email, password: password)
+                    log.signup(email: email, password: password)
                     withAnimation {
-                        username = log.auth.currentUser!.email!
+                        userID = log.auth.currentUser!.uid
                     }
                 }, label: {
-                    Text("Sign in")
+                    Text("Create Account")
                         .foregroundColor(Color.white)
                         .frame(width: 200, height: 50)
                         .cornerRadius(8)
                         .background(RoundedRectangle(cornerRadius: 10).fill(Color.brown))
                 })
-                Button(action: {withAnimation {self.currentViewShowing = "signup"}}) {
-                    Text("Create new account")
+                Button(action: {withAnimation {self.currentViewShowing = "login"}}) {
+                    Text("Already have an account?")
                         .foregroundColor(.blue.opacity(0.7))
                 }
                 Spacer()
                 Spacer()
-            }.onAppear {
-                Auth.auth().addStateDidChangeListener {
-                    auth, user in if log.isSignedIn { loggedIn = true}
-                }
             }
         }.padding()
     }
 }
 
-//struct LoginView_Previews: PreviewProvider {
+//struct SignUpView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        LoginView(currentViewShowing: $currentViewShowing)
+//        SignUpView(currentViewShowing: $currentViewShowing)
 //    }
 //}

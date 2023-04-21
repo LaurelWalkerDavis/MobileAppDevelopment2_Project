@@ -26,7 +26,7 @@ struct IgnatianPracticesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MenuView()
+            AuthView()
         }
     }
 }
